@@ -168,7 +168,7 @@ function añadirProductos(){
             lista.push(articuloSeleccionado)
             
 
-            console.log(lista);
+            // console.log(lista);
 
             localStorage.setItem("lista", JSON.stringify(lista))
         }
