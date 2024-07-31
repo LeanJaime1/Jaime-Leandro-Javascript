@@ -142,8 +142,9 @@ function añadirProductosDisponibles() {
         contenedor.innerHTML = `<h3> ${articulo.producto}</h3>
                                 <h4> $${articulo.precio}</h4>
                                 <button class='añadir' id=${articulo.id}>Añadir</button>`
-    disponibles.appendChild(contenedor)
+        disponibles.appendChild(contenedor)
         
+    
     });
 
 
@@ -153,7 +154,11 @@ function añadirProductosDisponibles() {
 
 añadirProductosDisponibles();
 
+function articuloAñadido () {
+    
+}
 
+articuloAñadido()
 
 
 
@@ -168,13 +173,21 @@ function añadirProductos(){
             lista.push(articuloSeleccionado)
             
 
-            // console.log(lista);
+            console.log(lista);
 
             localStorage.setItem("lista", JSON.stringify(lista))
         }
     })
 
 };
+
+
+
+
+
+
+
+
 
 
 
