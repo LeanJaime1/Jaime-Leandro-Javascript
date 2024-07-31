@@ -154,13 +154,6 @@ function añadirProductosDisponibles() {
 
 añadirProductosDisponibles();
 
-function articuloAñadido () {
-    
-}
-
-articuloAñadido()
-
-
 
 
 function añadirProductos(){
