@@ -11,7 +11,7 @@ function armarCarrito (items) {
         card.className = 'cards'
         card.innerHTML = `<h3>${articulo.producto}</h3>
                                 <p>$${articulo.precio}</p>
-                                <p><button class='eliminar'>X</button></p>`
+                                <p><button class='eliminar' id=${articulo.id}>X</button></p>`
                             
        contenedorCarrito.appendChild(card)
         })
@@ -48,25 +48,23 @@ totalCarrito();
 
 //ELIMINAR 
 
+const botonesEliminar = document.querySelectorAll('.eliminar');
+
+botonesEliminar.forEach(button => {
+  button.onclick = (e) => {
+    const articuloId = e.currentTarget.id
+    const indiceArticulo = carritoStorage.findIndex(articulo => (articulo.id) == articuloId)
+    if (indiceArticulo !== -1) {
+      carritoStorage.splice(indiceArticulo, 1)
+      console.log(carritoStorage)
+      localStorage.setItem("carritoStorage", JSON.stringify(carritoStorage))
+      
+      // Actualizar el carrito
+      contenedorCarrito.innerHTML= ''
+      armarCarrito(carritoStorage)
+      totalCarrito(carritoStorage)
+    }
+  }
+})
 
 
-/*
-
-const eliminarProductos = () => {
-
-    eliminarBoton = document.querySelectorAll('eliminar');
-    eliminarBoton.forEach(button => {
-        button.onclick = (e) => {
-            const articuloId = e.currentTarget.id
-            const articuloEliminado = carritoStorage.find(articulo => articulo.id == articuloId)
-            carritoStorage.splice(articuloEliminado)
-            
-        }
-        
-    })
-    console.log(carritoStorage);
-};
-
-eliminarProductos();
-
-*/
