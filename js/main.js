@@ -138,7 +138,7 @@ let recomendados = document.getElementById('disponibles');
 function añadirProductosDisponibles() {
     articulosDisponibles.forEach((articulo) => {
         let contenedor = document.createElement('div')
-        contenedor.className = 'card'
+        contenedor.className = 'cards'
         contenedor.innerHTML = `<h3> ${articulo.producto}</h3>
                                 <h4> $${articulo.precio}</h4>
                                 <button class='añadir' id=${articulo.id}>Añadir</button>`
@@ -153,6 +153,7 @@ function añadirProductosDisponibles() {
 }
 
 añadirProductosDisponibles();
+
 
 
 
@@ -176,12 +177,14 @@ function añadirProductos(){
 
 
 
+//CONTADOR DE ARTICULOS DE CARRITO
 
 
+const contadorCarrito = () =>{
+    
+}
 
-
-
-
+contadorCarrito();
 
 
 
